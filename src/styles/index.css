@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F9FAFB;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white text-gray-700 font-medium px-4 py-2.5 rounded-xl border border-gray-200 transition-all duration-200 hover:border-primary hover:text-primary hover:bg-primary-50;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-red-50 text-red-600 font-medium px-4 py-2.5 rounded-xl border border-red-200 transition-all duration-200 hover:bg-red-600 hover:text-white;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-textPrimary placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200 text-sm;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+  .badge-published {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700;
+  }
+  .badge-draft {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700;
+  }
+  .badge-archived {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 text-gray-600 hover:bg-primary-50 hover:text-primary;
+  }
+  .sidebar-link.active {
+    @apply bg-primary-50 text-primary;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F9FAFB; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4F46E5; }
+
+/* Quill editor styles */
+.ql-toolbar { border-radius: 12px 12px 0 0 !important; border-color: #E5E7EB !important; }
+.ql-container { border-radius: 0 0 12px 12px !important; border-color: #E5E7EB !important; min-height: 300px; font-family: 'Inter', sans-serif !important; font-size: 15px !important; }
+.ql-editor { min-height: 280px; line-height: 1.8 !important; }
